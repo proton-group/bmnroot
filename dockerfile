@@ -1,8 +1,8 @@
 FROM ubuntu
 ARG THREADS="8"
 WORKDIR /app
-RUN apt-get update && \
-	apt-get upgrade && \
+RUN apt-get -y update && \
+	apt-get -y upgrade && \
 	apt-get -y install uuid-dev wget rsync subversion git make cmake g++ gcc gfortran binutils \
 	patch lsb-release libicu-dev libx11-dev libxmu-dev libxpm-dev libxft-dev libxext-dev dpkg-dev \
 	xlibmesa-glu-dev libglew-dev python3-dev python-dev-is-python3 libxml2-dev libexpat1-dev zlib1g-dev \
