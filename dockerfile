@@ -8,6 +8,9 @@ RUN apt-get update && \
 	xlibmesa-glu-dev libglew-dev python3-dev python-dev-is-python3 libxml2-dev libexpat1-dev zlib1g-dev \
 	libpqxx-dev libmysqlclient-dev libsqlite3-dev libssl-dev libcurl4-openssl-dev automake libtool libreadline-dev libxerces-c-dev libgsl-dev libfftw3-dev && \
 	mkdir bmn-root
+RUN wget https://raw.githubusercontent.com/apache/flink/02d30ace69dc18555a5085eccf70ee884e73a16e/tools/azure-pipelines/free_disk_space.sh && \
+	chmod +x free_disk_space.sh && \
+	./free_disk_space.sh
 WORKDIR /app/bmn-root
 RUN git clone https://github.com/FairRootGroup/FairSoft.git fairsoft
 WORKDIR /app/bmn-root/fairsoft
